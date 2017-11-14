@@ -1,0 +1,174 @@
+@import url('./font.css');
+@import url('./link.css');
+@import url('./color.css');
+
+.rkaneko-theme {
+  background: #F5F5DC;
+  background-size: cover;
+  color: #003366;
+}
+
+.reference {
+  left: 10%;
+  bottom: 1em;
+  position: absolute;
+  margin: auto;
+  width: 80%;
+}
+
+.blockquote {
+  background-color: #eee;
+  border-radius: 5px;
+  color: #424242;
+  font-style: italic;
+  padding: 2em 3em 2em 3em;
+  position: relative;
+}
+
+.blockquote:before {
+  content: "“";
+  font-size: 600%;
+  line-height: 1em;
+  font-family: "ＭＳ Ｐゴシック",sans-serif;
+  color: #999;
+  position:absolute;
+  left: 0;
+  top: 0;
+}
+
+.blockquote-origin {
+  position: absolute;
+  right: 1em;
+  bottom: 0.5em;
+}
+
+.blockquote-origin:before {
+  content: "";
+  display: block;
+  border-top: solid 0.1em #424242;
+  width: 1.5em;
+  height: 0.5em;
+  position: absolute;
+  top: 50%;
+  left: -2em;
+  z-index: 1;
+}
+
+.rkaneko-theme table {
+  background-color: #00284d;
+  border-radius: 5px;
+  /* box-sizing: border-box; */
+  width: 100%;
+}
+
+.rkaneko-theme thead {
+  background-color: #2c3e5e;
+  color: #fff;
+}
+
+.rkaneko-theme th, td {
+  /* word-break: break-all; */
+}
+
+.rkaneko-theme tbody {
+  background-color: #eeeeee;
+}
+
+.title-page {
+  background: #00284d;
+  color: #fff;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.title-page .important {
+  color: #FFD700;
+}
+
+.paragraph-page {
+  background: #00284d;
+  color: #fff;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.paragraph-picture-page {
+  padding: 0;
+}
+
+.paragraph-picture-page figure {
+  color: #000;
+  padding: 0 !important;
+  margin: 0 !important;
+  position: relative;
+}
+
+.paragraph-picture-page img {
+  padding: 0;
+  width: 100%;
+  background-attachment: fixed;
+  background-color: #000;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.paragraph-picture-page__block {
+  background-color: rgba(0, 0, 0, 0.5);
+  height: 100%;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+.paragraph-picture-page__caption {
+  /* background-color: rgba(0, 0, 0, 0.6); */
+  bottom: 1em;
+  color: #fff;
+  font-size: 60px;
+  left: 0;
+  margin: 0;
+  position: absolute;
+  right: 0;
+  text-align: center;
+}
+
+.remark-code {
+  border-radius: 5px;
+}
+
+.footnote {
+  position: absolute;
+  bottom: 3em;
+  right: 3em;
+}
+
+.head-github-name {
+  position: absolute;
+  bottom: 3em;
+  right: 3em;
+}
+
+.head-github-name__icon {
+}
+
+.head-github-name__text {
+  padding: 0 28px;
+}
+
+.head-my-name {
+  position: absolute;
+  bottom: 5em;
+  right: 3em;
+}
+
+.head-my-name__icon {
+}
+
+.head-my-name__icon img {
+  width: 32px;
+}
+
+.head-my-name__text {
+  padding-left: 6px;
+}

@@ -1,0 +1,53 @@
+/* see also: http://materializecss.com/color.html */
+.color-yellow {
+  /* amber-accent-3 */
+  color: #ffc400;
+}
+
+.color-red {
+  /* red-darken-4 */
+  color: #b71c1c;
+}
+
+.color-blue {
+  /* light-blue-darken-4 */
+  color: #01579b;
+}
+
+.color-green {
+  /* teal-darken-1 */
+  color: #00897b;
+}
+
+.color-grey {
+  /* grey-darken-3 */
+  color: #424242;
+}
+
+.color-light-grey {
+  /* blue-grey-lighten-5 */
+  color: #eceff1;
+}
+
+.color-orange {
+  /* orange-accent-3 */
+  color: #ff9100;
+}
+
+.color-pink {
+  /* pink-darken-1 */
+  color: #d81b60;
+}
+
+.color-purple {
+  /* deep-purple */
+  color: #673ab7;
+}
+
+.color-black {
+  color: #000;
+}
+
+.color-white {
+  color: #fff;
+}

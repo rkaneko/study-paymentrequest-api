@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Study Payment Request API</title>
+    <meta charset="utf-8">
+    <link rel="shortcut icon" href="./img/favicon.ico"/>
+    <link href="./css/index.css" rel="stylesheet" type="text/css">
+    <link href="./css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  </head>
+  <body>
+    <textarea id="source">
+
+name: rkaneko-theme
+layout: true
+class: rkaneko-theme
+---
+class: title-page
+
+# Study Payment Request API
+#### Nov 15th, 2017
+##### @Axelspace, Corporation
+
+<span class="head-my-name">
+  <span class="head-my-name__icon">
+    <img src="./img/myicon_round.png" alt="rkaneko"/>
+  </span>
+  <span class="head-my-name__text">
+    Ryota Kaneko
+  </span>
+</span>
+
+<span class="head-github-name">
+  <span class="head-github-name__icon">
+    <i class="fa fa-github fa-2x"></i>
+  </span>
+  <span class="head-github-name__text">
+    rkaneko
+  </span>
+</span>
+---
+
+# Agenda
+
+0. Why Payment Request API?
+
+0. Overview of Payment Request API
+
+0. Demo using Payment Request API
+
+0. Conclusion
+---
+class: paragraph-page
+
+###  Question
+
+What occurs to your mind when you see this number?
+
+## 402
+
+---
+class: paragraph-page
+
+### Payment Required
+
+This is one of HTTP status codes.
+
+---
+### The current state of Web payment
+
+- Each web site implements their own payment flow
+  - Full scratch
+  - Uses web services provides by PSP
+
+- One web site autofills creditcard information, address etc, but the other doesn't
+
+- So far as mobile web, it's troublesome to input forms
+
+---
+### Why Payment Request API?
+
+- So far, we don't have the standard for payment on the Web
+
+- For more comfortable user experience
+
+- For more comfortable developer experience
+
+---
+### Payment Request API
+
+- https://www.w3.org/TR/payment-request/
+
+- Payment Request API (PR API) specification standardizes an API to allow merchants to utilize one or more payment methods with minimal integration. User agents facilitate the payment flow between merchant and user.
+  - merchants (i.e. web sites selling physical or digital goods)
+  - user agents (e.g., browsers)
+
+---
+### Payment Request API
+
+#### Status (as of November 11, 2017)
+
+.center[
+.blockquote[
+This document was published by the Web Payments Working Group as a **Candidate Recommendation**.
+This Candidate Recommendation is expected to advance to Proposed Recommendation no earlier than 31 October 2017.
+]
+]
+
+.center[.reference[Reference: [Status of This Document @ W3C Payment Request API](https://www.w3.org/TR/payment-request/#status-of-this-document)]]
+---
+### Payment Request API
+
+User agents (e.g. browsers) act as an intermediary between three parties in a transaction.
+
+- the payee
+
+- the payer
+
+- the payment method provider: (e.g.) credit card service providers
+
+The details of how to fulfill a payment request for a given payment method are handled by payment handlers.
+
+- https://www.w3.org/TR/payment-handler/
+
+---
+### Payment Request API
+
+#### Goals
+
+- Allow the user agent to act as intermediary between above three parties.
+
+- Standardize the communication flow between a merchant, user agent, and payment method provider.
+
+- Enable payment method providers to bring more secure payment transaction to the web.
+
+#### Out of scopes
+
+- Integrate .color-yellow[directly] with payment processors
+
+---
+### Supported browsers
+
+- https://caniuse.com/#feat=payment-request
+
+- Chrome: 61 ~
+- Edge: 15 ~ (※`PaymentRequest#canMakePayment()`)
+- Firefox: WIP
+  - https://blog.nightly.mozilla.org/2017/07/19/these-weeks-in-firefox-issue-20/
+- Safari: experimental on Techonology Preview
+  - https://webkit.org/blog/7877/release-notes-for-safari-technology-preview-38/
+
+- Payment Request API —Now Being Implemented in All Major Browsers— Advances on the Recommendation Tra
+  - https://www.w3.org/blog/wpwg/2017/09/14/payment-request-api-now-being-implemented-in-all-major-browsers-advances-on-the-recommendation-track/
+
+---
+### Supported methods
+
+#### On current situation
+
+- `basic-card`: https://www.w3.org/TR/payment-method-basic-card/
+- Pay with Google
+- (Conditional) Apple Pay
+  - via https://github.com/GoogleChrome/appr-wrapper
+
+#### In the future
+
+- account transfer
+- crypto currency
+- etc
+
+---
+### Simple flow using Payment Request API
+
+- The user clicks "Buy" button. (initiating a payment process)
+
+- .color-yellow[`PaymentRequest`] is constructed.
+
+- The site display interface for the user via .color-yellow[`PaymentRequest#show()`].
+
+- The user confirms request for payment.
+
+- The return value of .color-yellow[`PaymentRequest#show()`] resolves and pass .color-yellow[`PaymentResponse`] to the handler.
+
+- The site posts some parts of data of .yellow[`PaymentResponse`] back to a server or 3rd party service.
+
+- Calling .color-yellow[`PaymentResponse#complete()`] to finish payment interaction for the user agent.
+
+---
+
+class: center, middle
+
+### Demo
+
+https://rkaneko.github.io/demo-paymentrequest-api/
+
+---
+### Conclusion
+
+- Payment Request API will be a base for Web Payment
+
+---
+class: paragraph-picture-page
+
+<figure>
+<img src="./img/spit-on.gif" alt="spit-on"/>
+<div class="paragraph-picture-page__block"></div>
+<figcaption><p class="paragraph-picture-page__caption">awesome!</p></figcaption>
+</figure>
+---
+class: paragraph-page
+
+### Thanks!
+
+    </textarea>
+    <script src="./javascript/remark-0.14.0.js"></script>
+    <script>
+      var slideshow = remark.create({
+        ratio: '4:3',
+        highlightStyle: 'androidstudio',
+      });
+    </script>
+  </body>
+</html>
